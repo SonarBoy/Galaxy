@@ -1,16 +1,8 @@
-var express = require('express');
-var router = express.Router();
-
-var mongoose = require('mongoose');
-var userModel = require('../model/User');
-
-var email = require('../../email-Util');
-var passport = require('passport');
-
+let userModel = require('../model/User');
+let email = require('../../email-Util');
 
 module.exports.getUserList = (request,response,next) =>
 {
-
     /*
         Model.find()
         + The filter are cast to their respective SchemaTypes before the command is sent.
@@ -25,6 +17,7 @@ module.exports.getUserList = (request,response,next) =>
 
             - options: Object optional see
                 Query.prototype.setOptions() = Sets query options.
+                (https://mongoosejs.com/docs/api.html#query_Query-setOptions)
                 - tailable
                 - sort
                 - limit
@@ -38,7 +31,6 @@ module.exports.getUserList = (request,response,next) =>
 
             - callback: Function
     */
-
 
     userModel.User.find((error,userList) =>{
 
@@ -72,6 +64,9 @@ module.exports.postAddUser = (request,response,next) =>
         displayName: request.body.displayName
     });
 
+
+    //https://github.com/saintedlama/passport-local-mongoose
+    //Register: convenience method to register a new user instance with a given password.
     userModel.User.register(
         newUser,
         request.body.password,
@@ -100,15 +95,76 @@ module.exports.getEditUser = (request,response,next) =>
 
 module.exports.postEditUser = (request,response,next) =>
 {
+     var id = request.params.id;
 
+     var updatedUser = new userModel.User({
+        "_id": id,
+        "username": request.body.username,
+        "email": request.body.email,
+        "displayName": request.body.displayName,
+        "password":request.body.password,
+        "created":Date.now,
+        "updated":Date.now,
+    },{});
+
+    /*
+        Model.update() updates one document in the database without returning it;
+
+        filter «Object»
+        doc «Object»
+        [options] «Object» optional see Query.prototype.setOptions()
+            https://mongoosejs.com/docs/api.html#model_Model.updateOne
+
+    */
+    userModel.update({_id:id},updatedUser,(error) =>{
+        if(error){
+            console.log(error);
+            response.end(error);
+        }else{
+            response.json({success:true,msg:"Successfully editited new contact!"});
+        }
+    });
 }
 
 module.exports.getDeleteUser = (request,response,next) =>
 {
+    let id = request.params.id;
 
+    /* 
+        Model.deleteOne() = deletes the first doucment that matches conditions from the collection.
+            conditions «Object»
+            [options] «Object» optional see Query.prototype.setOptions()
+            [callback] «Function» 
+    */
+
+    userModel.User.deleteOne({_id:id},(error) =>{
+        if(error){
+            console.log(error);
+        }else{
+            response.redirect('../');
+        }
+
+    });
 }
 
 module.exports.forgotPasswordGet = (request,response,next) =>
 {
+    userModel.User.findOne({email:request.body.email},(error,user) =>{
 
+        if(error){
+            console.log("Error");
+        }else{
+            console.log(user.email);
+
+            user.setPassword("Test",(error,user) =>{
+                if(error){
+                    return error;
+                }else{
+                    user.save();
+                    email.sendNotificationEmail(user.email,'This is a Test','Your password has been set to test');
+                    response.json({success:true,msg:"Password reset email successfully sent."});
+                }   
+            });
+        }
+    });
 }
