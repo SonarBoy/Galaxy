@@ -1,6 +1,3 @@
-let express = require('express');
-let router = express.Router();
-
 let passport = require('passport');
 let jwt = require('jsonwebtoken');
 let DB = require('../config/db');

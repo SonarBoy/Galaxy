@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
-var userRouter = require('../controllers/userControllers');
+let userRouter = require('../controllers/userController');
 
 //https://expressjs.com/en/4x/api.html#app.get
 //https://expressjs.com/en/4x/api.html#app.post.method
@@ -51,8 +51,8 @@ router.get('/',userRouter.getUserList);
 router.get('/add',userRouter.getAddUser);
 router.post('/add',userRouter.postAddUser);
 
-router.get('/edit/:id',userRoute.getEditUser);
-router.post('/edit/:id',userRoute.postEditUser);
+router.get('/edit/:id',userRouter.getEditUser);
+router.post('/edit/:id',userRouter.postEditUser);
 
 router.get('/delete/:id',userRouter.getDeleteUser);
 

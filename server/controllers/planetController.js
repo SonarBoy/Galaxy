@@ -1,7 +1,3 @@
-let express = require('express');
-let router = express.Router();
-
-let mongoose = require('mongoose');
 let planetModel = require('../model/Planet');
 
 
@@ -55,6 +51,24 @@ module.exports.addPlanetPost = (request,response,next) =>
         } else {
             //! Put in for testing
             //response.redirect('/Planets');
+        }
+    });
+}
+
+
+module.exports.editPlanetGet = (request, response, next) => {
+    let id = request.params.id;
+
+    planetModel.findById(id, (error, planetObject) => {
+
+        if (error) {
+            console.log(error);
+            response.end(error);
+        } else {
+            response.render('planets/edit', {
+                title: 'Edit Object',
+                planet: planetObject
+            });
         }
     });
 }
