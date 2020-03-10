@@ -26,7 +26,7 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 let indexRouter = require('../routes/index');
 let planetRouter = require('../routes/planetsRouter');
 let userRouter = require('../routes/userRouter');
-//let celestialObjectRouter = require('../routes/celestialObjects');
+let celestialObjectRouter = require('../routes/celestialObjectsRouter');
 let galaxyRouter = require('../routes/galaxyRouter');
 
 
@@ -155,7 +155,8 @@ passport.use(strategy);
 
 //* Appsection.
 app.use('/api',indexRouter);
-//app.use('/api/celestialObjects',celestialObjectRouter);
+app.use('/api/planets',planetRouter);
+app.use('/api/celestialObjects',celestialObjectRouter);
 app.use('/api/galaxy',galaxyRouter);
 app.use('/api/Users',passport.authenticate('jwt',{session:false}),userRouter);
 

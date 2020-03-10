@@ -2,7 +2,7 @@ var celestialObjectModel = require('../model/CelestialObjects');
 
 //*STEP 1: First GET request of all the documents in the celestialObjectsCollection 
 //*We will also go into detail about how the steps work in this format.
-module.exports.displayCelestialObjectList = (request,response,next) => 
+module.exports.getCelestialObjectsList = (request,response,next) => 
 {
 
     //*Ask the model object to find the celestial object colletion
@@ -58,7 +58,7 @@ module.exports.addCelestialObjects = (request,response,next) =>
 }
 
 //* STEP 4: Specify the POST request to delete the celestial object.
-module.exports.deleteCelestialObject = (request,response,next) => 
+module.exports.deleteCelestialObjects = (request,response,next) => 
 {
     let id = request.params.id;
 
@@ -76,7 +76,7 @@ module.exports.deleteCelestialObject = (request,response,next) =>
     });
 }
 
-module.exports.editCelestialObjectGET = (request,response,next) =>
+module.exports.editCelestialObjectsGET = (request,response,next) =>
 {
     let id = request.params.id;
 
@@ -95,7 +95,7 @@ module.exports.editCelestialObjectGET = (request,response,next) =>
     });
 }
 
-module.exports.editCelestialObjectPOST = (request,response,next) => 
+module.exports.editCelestialObjectsPOST = (request,response,next) => 
 {
     let id = request.params.id;
 
