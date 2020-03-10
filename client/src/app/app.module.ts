@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 //import {AuthService} from './services/auth.service';
 import {JwtModule,JwtHelperService, JwtInterceptor} from '@auth0/angular-jwt';
 import { FunctionsComponent } from './util/functions/functions.component';
+import { GalaxyComponent } from './galaxy/galaxy/galaxy.component';
+import { PlanetComponent } from './planet/planet/planet.component';
 //import { AuthGuard } from './guards/auth.guard';
 
 export function jwtTokenGetter(){
@@ -29,7 +31,9 @@ export function jwtTokenGetter(){
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    FunctionsComponent
+    FunctionsComponent,
+    GalaxyComponent,
+    PlanetComponent,
   ],
   imports: [
     BrowserModule,

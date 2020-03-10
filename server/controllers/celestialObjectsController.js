@@ -25,7 +25,7 @@ module.exports.getCelestialObjectsList = (request,response,next) =>
 }
 
 //*STEP 2: First GET request to the add Celestial Object
-module.exports.addCelestialObjectsDisplay = (request,response,next) =>
+module.exports.getCelestialObjectsAdd = (request,response,next) =>
 {
     response.render('celestialObjects/add',{
         title:'Add New Celestial Object'
@@ -33,7 +33,7 @@ module.exports.addCelestialObjectsDisplay = (request,response,next) =>
 }
 
 //*STEP 3: POST request to add a new planet to the celestialObjects collection
-module.exports.addCelestialObjects = (request,response,next) =>
+module.exports.postCelestialObjectsAdd = (request,response,next) =>
 {
 
     //* Create a new object that is of type celestial object and 
@@ -58,7 +58,7 @@ module.exports.addCelestialObjects = (request,response,next) =>
 }
 
 //* STEP 4: Specify the POST request to delete the celestial object.
-module.exports.deleteCelestialObjects = (request,response,next) => 
+module.exports.getCelestialObjectsDelete = (request,response,next) => 
 {
     let id = request.params.id;
 
@@ -76,7 +76,7 @@ module.exports.deleteCelestialObjects = (request,response,next) =>
     });
 }
 
-module.exports.editCelestialObjectsGET = (request,response,next) =>
+module.exports.getCelestialObjectsEdit = (request,response,next) =>
 {
     let id = request.params.id;
 
@@ -95,7 +95,7 @@ module.exports.editCelestialObjectsGET = (request,response,next) =>
     });
 }
 
-module.exports.editCelestialObjectsPOST = (request,response,next) => 
+module.exports.postCelestialObjectsEdit = (request,response,next) => 
 {
     let id = request.params.id;
 
