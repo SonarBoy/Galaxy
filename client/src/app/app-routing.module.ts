@@ -6,8 +6,10 @@ import { HomeComponent } from './util/home/home.component';
 import { ProjectsComponent } from './util/projects/projects.component';
 import { FunctionsComponent } from './util/functions/functions.component';
 import { ErrorComponent } from './util/error/error.component';
-import { PlanetComponent } from './planet/planet/planet.component';
-import { GalaxyComponent } from './galaxy/galaxy/galaxy.component';
+import { PlanetComponent } from './pages/planet/planet/planet.component'
+import { GalaxyComponent } from './pages/galaxy/galaxy/galaxy.component';
+import { CelestialObjectsComponent } from './pages/celestial-objects/celestial-objects.component';
+
 
 const routes: Routes = [
   {path:'About',component:AboutComponent,data:{title:'About'}},
@@ -17,8 +19,9 @@ const routes: Routes = [
   {path:'',component:HomeComponent,data:{title:'Home'}},
   
   //Planets
-  {path:'Planets',component:PlanetComponent,data:{title:'Planets'}},
+  {path:'Planets',component:PlanetComponent},
   {path:'Galaxies',component:GalaxyComponent,data:{title:'Galaxies'}},
+  {path:'CelestialObjects',component:CelestialObjectsComponent,data:{title:'CelestialObjects'}},
   {path:'**',component:ErrorComponent}
 ];
 

@@ -155,9 +155,9 @@ passport.use(strategy);
 
 //* Appsection.
 app.use('/api',indexRouter);
-app.use('/api/planets',planetRouter);
+app.use('/api/Planets',planetRouter);
 app.use('/api/celestialObjects',celestialObjectRouter);
-app.use('/api/galaxy',galaxyRouter);
+app.use('/api/Galaxy',galaxyRouter);
 app.use('/api/Users',passport.authenticate('jwt',{session:false}),userRouter);
 
 
@@ -169,7 +169,7 @@ app.use(function(error,request,response,next){
     response.locals.message = error.message;
     response.locals.error = request.app.get('env') === 'development' ? error : {};
 
-    resoponse.status(error.status || 500);
+    response.status(error.status || 500);
     response.render('error');
 })
 

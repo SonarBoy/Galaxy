@@ -3,7 +3,7 @@ let router = express.Router();
 
 let planetController = require('../controllers/planetController');
 
-router.get('/Planets',planetController.addPlanetGet);
+router.get('/',planetController.getPlanetList);
 
 //! This maybe an issue.
 router.get('/add',planetController.addPlanetGet);

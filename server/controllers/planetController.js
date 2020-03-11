@@ -19,7 +19,7 @@ module.exports.getPlanetList = (request,response,next) =>
             });
             */
 
-            response.json({success:true,msg:"User Found",userList: userList});
+            response.json({success:true,msg:"Planets Found",planetList: planetList});
 
         }
     });

@@ -5,6 +5,7 @@ var celestialObjectModel = require('../model/CelestialObjects');
 module.exports.getCelestialObjectsList = (request,response,next) => 
 {
 
+    /*
     //*Ask the model object to find the celestial object colletion
     celestialObjectModel.find((error,celestialObjectList) =>{
 
@@ -22,6 +23,28 @@ module.exports.getCelestialObjectsList = (request,response,next) =>
             });
         }
     });
+    */
+
+   celestialObjectModel.find((error,celestialObjectList) => {
+
+    if(error){
+        //https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+        return console.error(error);
+    } else {
+
+        
+        //! Put in for testing.
+        /*
+        response.render('planets/index', {
+            title: 'Planet List',
+            planetList: planetList
+        });
+        */
+
+        response.json({success:true,msg:"Planets Found",celestialObjectList: celestialObjectList});
+
+    }
+});
 }
 
 //*STEP 2: First GET request to the add Celestial Object
