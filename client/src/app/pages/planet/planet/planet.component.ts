@@ -38,31 +38,3 @@ export class PlanetComponent implements OnInit {
 
 
 }
-
-/**
- * planets: Planet[];
-
-  constructor(
-    private planetService: PlanetService,
-    private router: Router
-  ) { }
-
-  ngOnInit() {
-
-    this.planets = new Array<Planet>();
-    //this.displayPlanetList();
-  }
-
-
-  displayPlanetList(){
-    this.planetService.getList().subscribe(data => {
-
-      if(data.success){
-        console.log(data);
-        this.planets = data.planetList;
-      }else{
-        this.planets = null;
-      }
-    });
-  }
- */

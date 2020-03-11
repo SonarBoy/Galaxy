@@ -41,7 +41,7 @@ module.exports.getCelestialObjectsList = (request,response,next) =>
         });
         */
 
-        response.json({success:true,msg:"Planets Found",celestialObjectList: celestialObjectList});
+        response.json({success:true,msg:"Celestial Objects Found",celestialObjectList: celestialObjectList});
 
     }
 });

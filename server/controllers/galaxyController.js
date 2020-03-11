@@ -6,7 +6,7 @@ module.exports.getGalaxyList = (request,response,next) => {
         if(error){
             return console.log(error);
         }else{
-
+            response.json({success:true,msg:"Galaxy Found",galaxyList: galaxyList});
             /*
             ! Remove after testing
             response.render('galaxy/index',{

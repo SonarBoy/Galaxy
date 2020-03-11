@@ -3,7 +3,7 @@ let router = express.Router();
 let celestialObjects = require('../controllers/celestialObjectsController');
 
 
-router.get('/celestialObjects', celestialObjects.getCelestialObjectsList);
+router.get('/', celestialObjects.getCelestialObjectsList);
 
 //! PLEASE FIX ALL METHOD NAMES AND GET THIS WORKING BY TOMMOROW
 

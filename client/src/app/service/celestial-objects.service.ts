@@ -21,7 +21,7 @@ export class CelestialObjectsService {
 
   constructor(private http: HttpClient) { }
 
-  public getGalaxyList(): Observable<any>{
+  public getCelestialObjectsList(): Observable<any>{
     return this.http.get<any>(this.endpoint,this.httpOptions);
   }
 }

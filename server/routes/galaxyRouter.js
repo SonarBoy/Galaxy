@@ -3,7 +3,7 @@ let router = express.Router();
 let galaxyController = require('../controllers/galaxyController');
 
 
-router.get('/Galaxy', galaxyController.getGalaxyList);
+router.get('/', galaxyController.getGalaxyList);
 
 //! Issues
 router.get('/add',galaxyController.getGalaxyAdd);
