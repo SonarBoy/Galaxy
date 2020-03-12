@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Galaxy } from '../model/galaxy';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,13 @@ export class GalaxyService {
     return this.http.get<any>(this.endpoint,this.httpOptions);
   }
 
+  public addGalaxy(addingGalaxy: Galaxy): Observable<any>{
+    return this.http.post<any>(this.endpoint+'/add',addingGalaxy,this.httpOptions);
+  }
+
+  public deleteGalaxy(deleteGalaxy: Galaxy):Observable<any>{
+    return this.http.get<any>(this.endpoint + '/delete/' + deleteGalaxy._id,this.httpOptions);
+  }
 
 
 }

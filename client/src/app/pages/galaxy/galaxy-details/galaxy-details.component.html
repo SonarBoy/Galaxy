@@ -1,0 +1,98 @@
+<p>galaxy-details works!</p>
+<div class="row col-md-offset-4 col-md-4">
+    <!--
+        When angular is using the (submit) functionality 
+        all font end validation is going to break.
+    -->
+    <form class="testform" #testform="ngForm" (submit)="onDetailsSubmit()" method="POST">
+        <fieldset class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" class="form-control" required
+            name="Name" placeholder="Enter Name" autofocus
+            id="Name"
+            [(ngModel)] = "galaxy.Name"
+            value="{{galaxy.Name}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Designation">Designation:</label>
+            <input type="text" class="form-control" required
+            name="Designation" placeholder="Enter Designation" autofocus
+            id="Designation"
+            [(ngModel)] = "galaxy.Designation"
+            value="{{galaxy.Designation}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Type">Type:</label>
+            <input type="text" class="form-control" required
+            name="Type" placeholder="Enter Type" autofocus
+            id="Type"
+            [(ngModel)] = "galaxy.Type"
+            value="{{galaxy.Type}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Diameter">Diameter:</label>
+            <input type="text" class="form-control" required
+            name="Diameter" placeholder="Enter Diameter" autofocus
+            id="Diameter"
+            [(ngModel)] = "galaxy.Diameter"
+            value="{{galaxy.Diameter}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="DistanceFromEarth">Name:</label>
+            <input type="text" class="form-control" required
+            name="DistanceFromEarth" placeholder="Enter DistanceFromEarth" autofocus
+            id="DistanceFromEarth"
+            [(ngModel)] = "galaxy.DistanceFromEarth"
+            value="{{galaxy.DistanceFromEarth}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Mass">Mass:</label>
+            <input type="text" class="form-control" required
+            name="Mass" placeholder="Enter Mass" autofocus
+            id="Mass"
+            [(ngModel)] = "galaxy.Mass"
+            value="{{galaxy.Mass}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Constellation">Constellation:</label>
+            <input type="text" class="form-control" required
+            name="Constellation" placeholder="Enter Constellation" autofocus
+            id="Constellation"
+            [(ngModel)] = "galaxy.Constellation"
+            value="{{galaxy.Constellation}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Discovered">Name:</label>
+            <input type="text" class="form-control" required
+            name="Discovered" placeholder="Enter Discovered" autofocus
+            id="Discovered"
+            [(ngModel)] = "galaxy.Discovered"
+            value="{{galaxy.Discovered}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="Stars">Name:</label>
+            <input type="text" class="form-control" required
+            name="Stars" placeholder="Enter Stars" autofocus
+            id="Stars"
+            [(ngModel)] = "galaxy.Stars"
+            value="{{galaxy.Stars}}">
+        </fieldset>
+
+        
+        <fieldset class="form-group text-right">
+            <button type="button" (click)="onDetailsSubmit();">Preview</button>
+        </fieldset>
+
+        <fieldset class="form-group text-right">
+            <button type="button" (click)="onTestNavigate();">Back</button>
+        </fieldset>
+    </form>
+</div>

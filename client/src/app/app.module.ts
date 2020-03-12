@@ -19,6 +19,11 @@ import { GalaxyComponent } from './pages/galaxy/galaxy/galaxy.component'
 import { PlanetComponent } from './pages/planet/planet/planet.component';
 import { CelestialObjectsComponent } from './pages/celestial-objects/celestial-objects.component';
 import { PlanetDetailsComponent } from './pages/planet/planet-details/planet-details.component';
+import { PlanetDeleteComponent } from './pages/planet/planet-delete/planet-delete.component';
+import { GalaxyDeleteComponent } from './pages/galaxy/galaxy-delete/galaxy-delete.component';
+import { GalaxyDetailsComponent } from './pages/galaxy/galaxy-details/galaxy-details.component';
+import { CelestialObjectsDetailsComponent } from './pages/celestial-objects/celestial-objects-details/celestial-objects-details.component';
+import { CelestialObjectsDeleteComponent } from './pages/celestial-objects/celestial-objects-delete/celestial-objects-delete.component';
 
 //import { AuthGuard } from './guards/auth.guard';
 /* *
@@ -56,7 +61,12 @@ JwtModule.forRoot({
     GalaxyComponent,
     PlanetComponent,
     CelestialObjectsComponent,
-    PlanetDetailsComponent
+    PlanetDetailsComponent,
+    PlanetDeleteComponent,
+    GalaxyDeleteComponent,
+    GalaxyDetailsComponent,
+    CelestialObjectsDetailsComponent,
+    CelestialObjectsDeleteComponent
   ],
   imports: [
     BrowserModule,

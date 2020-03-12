@@ -23,11 +23,17 @@ export class GalaxyComponent implements OnInit {
     this.displayGalaxyList();
   }
 
+  public onDeleteClick():void{
+    if(!confirm('Are you sure?')){
+      this.router.navigate(['/Galaxies']);
+    }
+  }
+
   displayGalaxyList(){
     this.galaxyService.getGalaxyList().subscribe(data =>{
       
       if(data.success){
-        console.log(data);
+        
         this.galaxy = data.galaxyList;
       }else{
         this.galaxy = null;

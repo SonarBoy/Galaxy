@@ -7,14 +7,6 @@ module.exports.getGalaxyList = (request,response,next) => {
             return console.log(error);
         }else{
             response.json({success:true,msg:"Galaxy Found",galaxyList: galaxyList});
-            /*
-            ! Remove after testing
-            response.render('galaxy/index',{
-                title: 'Galaxy List',
-                galaxyList: galaxyList,
-                displayName: request.user ? request.user.displayName : ""
-            });
-            */
         }
     })
 }
@@ -47,8 +39,8 @@ module.exports.postGalaxyAdd = (request,response,next) =>{
             console.log(error);
             response.end(error);
         }else{
-            //! Remove after testing
-            //response.redirect('./ObjectList');
+            //! PLEASE DEFINE ALL ENDPOINT RESPONSES BEFORE TESTING
+            response.json({success:true,msg:"Successfully added Galaxy!"})
         }
     });
 }
@@ -99,6 +91,7 @@ module.exports.postGalaxyEdit = (request,response,next) =>{
             }else{
                 //! Remove after testing.
                 //response.redirect('../ObjectList');
+                response.json({success:true,msg:"Successfully editited Galaxy!"})
             }
         });
 }
@@ -108,12 +101,10 @@ module.exports.getGalaxyDelete = (request,response,next) =>{
     let id = request.params.id;
 
     galaxyModel.remove({_id:id},(error) =>{
-
-    if(error){
-        console.log(error);
-    }else{
-        //! Remove after testing.
-        //response.redirect('../ObjectList');
-    }
+        if(error){
+            console.log(error);
+        }else{
+            response.json({success:true,msg:"Successfully deleted Galaxy!"})
+        }
     });
 }
