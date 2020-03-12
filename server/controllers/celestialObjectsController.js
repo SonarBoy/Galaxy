@@ -74,7 +74,8 @@ module.exports.postCelestialObjectsAdd = (request,response,next) =>
             response.end(error);
         }else{
             //* Otherwise reditect the navigation to the ObjectList.
-            response.redirect('ObjectList');
+            //response.redirect('ObjectList');
+            response.json({success:true,msg:"Successfully added CelestialObject!"})
         }
     });
 

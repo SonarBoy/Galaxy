@@ -21,6 +21,12 @@ export class GalaxyComponent implements OnInit {
   ngOnInit() {
     this.galaxy = new Array<Galaxy>();
     this.displayGalaxyList();
+
+    
+  }
+
+  public onTestNavigate():void{
+    this.router.navigate(['Galaxies']);
   }
 
   public onDeleteClick():void{
@@ -31,9 +37,7 @@ export class GalaxyComponent implements OnInit {
 
   displayGalaxyList(){
     this.galaxyService.getGalaxyList().subscribe(data =>{
-      
       if(data.success){
-        
         this.galaxy = data.galaxyList;
       }else{
         this.galaxy = null;

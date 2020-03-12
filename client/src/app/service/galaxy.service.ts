@@ -24,6 +24,14 @@ export class GalaxyService {
     return this.http.get<any>(this.endpoint,this.httpOptions);
   }
 
+  public getGalaxy(editGalaxy: Galaxy): Observable<any>{
+    return this.http.get<any>(this.endpoint + '/edit/' + editGalaxy._id,this.httpOptions);
+  }
+
+  public postEditGalaxy(editGalaxy: Galaxy): Observable<any>{
+    return this.http.post<any>(this.endpoint + '/edit/' + editGalaxy._id,editGalaxy,this.httpOptions);
+  }
+
   public addGalaxy(addingGalaxy: Galaxy): Observable<any>{
     return this.http.post<any>(this.endpoint+'/add',addingGalaxy,this.httpOptions);
   }

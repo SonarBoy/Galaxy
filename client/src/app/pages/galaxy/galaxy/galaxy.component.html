@@ -7,9 +7,10 @@
                 <div class="col p-4 d-flex flex-column position-static rowItemMongo">
                     
                     <h3 class="mb-0">{{item.Name}}</h3>
+                    <h3 class="mb-0">{{item._id}}</h3>
                     <p class="card-text mb-auto">{{item.Designation}}</p>
                     <span class="span2">
-                        <!--<a routerLink="/User/user-list/edit/{{ user._id }}" class="btn btn-primary" >Edit</a> -->
+                        <a routerLink="/Galaxies/edit/{{ item._id }}" class="btn btn-primary" >Edit</a>
                         <a routerLink="/Galaxies/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
                     </span>
                 </div>

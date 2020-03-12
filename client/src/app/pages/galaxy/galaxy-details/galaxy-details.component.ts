@@ -27,11 +27,24 @@ export class GalaxyDetailsComponent implements OnInit {
     this.galaxy = new Galaxy();
 
     this.activatedRoute.params.subscribe(params => {
-      this.galaxy._id = params._id;
+      this.galaxy._id = params.id;
     })
 
     
+
+    if (this.title === 'Edit Galaxy') {
+      this.getGalaxy(this.galaxy);
+      console.log(this.galaxy);
+    }
     
+    
+    
+  }
+
+  private getGalaxy(galaxyGet: Galaxy): void{
+    this.galaxyListService.getGalaxy(galaxyGet).subscribe(data => {
+      this.galaxy = data.galaxy;
+    });
   }
 
   public onTestNavigate():void{
@@ -45,14 +58,28 @@ export class GalaxyDetailsComponent implements OnInit {
         this.galaxyListService.addGalaxy(this.galaxy).subscribe(data =>
         {
           
-          if(data.success){
-            
+          if(data.success){  
             console.log(data.success);
             this.router.navigate(['/Galaxies']);
           }else{
             this.router.navigate(['/SomethingElse']);
           }
+
+        });
+      break;
+        
+      case "Edit Galaxy":
+        this.galaxyListService.postEditGalaxy(this.galaxy).subscribe(data => {
+
+          if(data.success){  
+            console.log(data.success);
+            this.router.navigate(['/Galaxies']);
+          }else{
+            this.router.navigate(['/SomethingElse']);
+          }
+
         })
+        
       break;
     }
   }

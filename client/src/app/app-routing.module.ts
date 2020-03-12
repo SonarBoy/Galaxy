@@ -29,6 +29,7 @@ const routes: Routes = [
 
   {path:'Galaxies',component:GalaxyComponent,data:{title:'Galaxies'}},
   {path:'Galaxies/add',component:GalaxyDetailsComponent,data:{title:'Add Galaxy'}},
+  {path:'Galaxies/edit/:id',component:GalaxyDetailsComponent,data:{title:'Edit Galaxy'}},
   {path:'Galaxies/delete/:id',component:GalaxyDeleteComponent,data:{title:'Delete Galaxy'}},
 
 

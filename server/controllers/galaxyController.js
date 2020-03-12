@@ -13,7 +13,6 @@ module.exports.getGalaxyList = (request,response,next) => {
 
 module.exports.getGalaxyAdd = (request,response,next) => {
     /*
-    ! Remove after testing.
     response.render('galaxy/add',{
         title:'Add new Galaxy Object',
         displayName: request.user ? request.user.displayName : ""
@@ -47,21 +46,13 @@ module.exports.postGalaxyAdd = (request,response,next) =>{
 
 module.exports.getGalaxyEdit = (request,response,next) =>{
     let id = request.params.id;
-
+    
     galaxyModel.findById(id,(error,galaxyModelReturn) =>{
         if(error){
             console.log(error);
             response.end(error);
         }else{
-
-            /*
-            ! Remove after testing.
-            response.render('galaxy/edit',{
-                title:"Edit Galaxy Object",
-                galaxyObject: galaxyModelReturn,
-                displayName: request.user ? request.user.displayName : ""
-            })
-            */
+           response.json({success:true,msg:"Galaxy Found",galaxy:galaxyModelReturn});
         }
     });
 }
@@ -89,8 +80,6 @@ module.exports.postGalaxyEdit = (request,response,next) =>{
                 console.log(error);
                 response.end(error);
             }else{
-                //! Remove after testing.
-                //response.redirect('../ObjectList');
                 response.json({success:true,msg:"Successfully editited Galaxy!"})
             }
         });
