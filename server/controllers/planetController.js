@@ -9,18 +9,7 @@ module.exports.getPlanetList = (request,response,next) =>
             //https://developer.mozilla.org/en-US/docs/Web/API/Console/error
             return console.error(error);
         } else {
-
-            
-            //! Put in for testing.
-            /*
-            response.render('planets/index', {
-                title: 'Planet List',
-                planetList: planetList
-            });
-            */
-
             response.json({success:true,msg:"Planets Found",planetList: planetList});
-
         }
     });
 }
@@ -49,8 +38,7 @@ module.exports.addPlanetPost = (request,response,next) =>
             response.json({success:false,msg:"Failed to create planet."});
             console.log(error);
         } else {
-            //! Put in for testing
-            //response.redirect('/Planets');
+            response.json({success:true,msg:"Successfully added Planet!"})
         }
     });
 }
@@ -65,10 +53,7 @@ module.exports.editPlanetGet = (request, response, next) => {
             console.log(error);
             response.end(error);
         } else {
-            response.render('planets/edit', {
-                title: 'Edit Object',
-                planet: planetObject
-            });
+            response.json({success:true,msg:"Galaxy Found",planet:planetObject});
         }
     });
 }
@@ -89,8 +74,7 @@ module.exports.editPlanetPost = (request,response,next) =>
             response.json({success:false,msg:"Failed to create planet."});
             console.log(error);
         } else {
-            //! Put in for testing
-            //response.redirect('/Planets');
+            response.json({success:true,msg:"Successfully editited Planet!"})
         }
     });
 }
@@ -107,6 +91,7 @@ module.exports.deletePlanet = (request,response,next) =>
         } else {
             //! Put in for testing
             //response.redirect('/Planets');
+            response.json({success:true,msg:"Successfully editited Planet!"})
         }
     });
 }

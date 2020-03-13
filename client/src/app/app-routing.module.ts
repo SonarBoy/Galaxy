@@ -14,6 +14,7 @@ import { GalaxyDeleteComponent } from './pages/galaxy/galaxy-delete/galaxy-delet
 import { PlanetDetailsComponent } from './pages/planet/planet-details/planet-details.component';
 import { CelestialObjectsDetailsComponent } from './pages/celestial-objects/celestial-objects-details/celestial-objects-details.component';
 import { CelestialObjectsDeleteComponent } from './pages/celestial-objects/celestial-objects-delete/celestial-objects-delete.component';
+import { PlanetDeleteComponent } from './pages/planet/planet-delete/planet-delete.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,9 @@ const routes: Routes = [
   
   //Planets
   {path:'Planets',component:PlanetComponent,data:{title:'Planets'}},
-  {path:'Planets/add',component:PlanetDetailsComponent,data:{title:'Planets'}},
+  {path:'Planets/add',component:PlanetDetailsComponent,data:{title:'Add Planet'}},
+  {path:'Planets/edit/:id',component:PlanetDetailsComponent,data:{title:'Edit Planet'}},
+  {path:'Planets/delete/:id',component:PlanetDeleteComponent,data:{title:'Delete Planet'}},
 
 
   {path:'Galaxies',component:GalaxyComponent,data:{title:'Galaxies'}},

@@ -24,6 +24,12 @@ export class PlanetComponent implements OnInit {
    this.displayPlanetList();
   }
 
+  public onDeleteClick():void{
+    if(!confirm('Are you sure?')){
+      this.router.navigate(['/Planets']);
+    }
+  }
+
   displayPlanetList(){
     this.plService.getPlanetList().subscribe(data => {
 

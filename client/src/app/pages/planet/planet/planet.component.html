@@ -1,4 +1,5 @@
 <h1>Planets</h1>
+<a class="btn btn-primary btn-sm" routerLink="/Planets/add" role="button">Add to Planets</a>
     <div *ngFor="let item of planets">
         <div class="row mb-1 p-4">
             <div class="col-md-12">
@@ -7,7 +8,10 @@
                         
                         <h3 class="mb-0">{{item.Name}}</h3>
                         <p class="card-text mb-auto">{{item.Description}}</p>
-                        
+                        <span class="span2">
+                            <a routerLink="/Planets/edit/{{ item._id }}" class="btn btn-primary" >Edit</a>
+                            <a routerLink="/Planets/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
+                        </span>
                     </div>
                 </div>
             </div>
