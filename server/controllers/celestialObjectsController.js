@@ -5,44 +5,15 @@ var celestialObjectModel = require('../model/CelestialObjects');
 module.exports.getCelestialObjectsList = (request,response,next) => 
 {
 
-    /*
-    //*Ask the model object to find the celestial object colletion
-    celestialObjectModel.find((error,celestialObjectList) =>{
-
-        
-        if(error){
-            return console.error(error);
-        }else{
-            
-            //*Otherwise render the index.ejs page in the /views/celestialObjects directory
-            //*passing the title and celestialObjectList properties in the response object.
-            response.render('celestialObjects/index',{
-                title: 'Celestial Object List',
-                celestialObjectList: celestialObjectList,
-                displayName: request.user ? request.user.displayName : ""
-            });
-        }
-    });
-    */
-
+   //*Ask the model object to find the celestial object colletion
    celestialObjectModel.find((error,celestialObjectList) => {
 
     if(error){
         //https://developer.mozilla.org/en-US/docs/Web/API/Console/error
         return console.error(error);
     } else {
-
-        
-        //! Put in for testing.
-        /*
-        response.render('planets/index', {
-            title: 'Planet List',
-            planetList: planetList
-        });
-        */
-
+        //* Successfully found the celestial objects returns json
         response.json({success:true,msg:"Celestial Objects Found",celestialObjectList: celestialObjectList});
-
     }
 });
 }
@@ -85,7 +56,6 @@ module.exports.postCelestialObjectsAdd = (request,response,next) =>
 module.exports.getCelestialObjectsDelete = (request,response,next) => 
 {
     let id = request.params.id;
-
     celestialObjectModel.remove({_id:id},(error) =>{
 
         if(error){
@@ -95,7 +65,7 @@ module.exports.getCelestialObjectsDelete = (request,response,next) =>
             //JESUS THANK YOU FOR HELPING ME WITH THIS.
             //NOTE:WHEN SPECIFYING REDIRECTION WITH MULTIPLE ROUTER OBJECTS
             //THINK ABOUT IT LIKE A DIRECTORY STRUCTURE WHEN PROGRAMMING IT.
-            response.redirect('../ObjectList');
+            response.json({success:true,msg:"Successfully deleted Celestial Objects!"})
         }
     });
 }
@@ -110,11 +80,7 @@ module.exports.getCelestialObjectsEdit = (request,response,next) =>
             console.log(error);
             response.end(error);
         }else{
-            response.render('celestialObjects/edit',{
-                title:"Edit Celestial Object",
-                celestialObject: celestialObjectReturn,
-                displayName: request.user ? request.user.displayName : ""
-            });
+           response.json({success:true,msg:"Galaxy Found",galaxy:galaxyModelReturn});
         }
     });
 }
@@ -137,7 +103,7 @@ module.exports.postCelestialObjectsEdit = (request,response,next) =>
             console.log(error);
             response.end(error);
         }else{
-            response.redirect('../ObjectList');
+            response.json({success:true,msg:"Successfully deleted Galaxy!"})
         }
 
     });

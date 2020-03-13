@@ -3,6 +3,20 @@
     <!--
         When angular is using the (submit) functionality 
         all font end validation is going to break.
+
+    * ANGULAR FORMS SYNTAX
+    * https://angular.io/guide/forms
+
+    * Interpolation {{...}}
+    * Interpolation refers to embedding expressions into marked up text. By default, interpolation
+    * uses as its delimiter the double curly braces, {{ and }}.
+    * https://angular.io/guide/template-syntax#interpolation-
+
+    * Template statements
+    * A template statement responds to an event raised by a binding target such as an element, component, 
+    * or directive. You'll see template statements in the event binding section, appearing in quotes to 
+    * the right of the = symbol as in (event)="statement".
+
     -->
     <form class="testform" #testform="ngForm" (submit)="onDetailsSubmit()" method="POST">
         <fieldset class="form-group">

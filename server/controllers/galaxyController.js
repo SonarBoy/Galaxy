@@ -85,7 +85,6 @@ module.exports.postGalaxyEdit = (request,response,next) =>{
         });
 }
 
-
 module.exports.getGalaxyDelete = (request,response,next) =>{
     let id = request.params.id;
 

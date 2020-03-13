@@ -12,6 +12,7 @@ import { GalaxyService} from 'src/app/service/galaxy.service';
 })
 export class GalaxyDetailsComponent implements OnInit {
 
+
   title: string;
   galaxy: Galaxy;
 
@@ -23,24 +24,24 @@ export class GalaxyDetailsComponent implements OnInit {
 
   ngOnInit() {
 
+    //! PLEASE PUT NOTES HERE
     this.title = this.activatedRoute.snapshot.data.title;
     this.galaxy = new Galaxy();
 
+    //! PLEASE PUT NOTES HERE
     this.activatedRoute.params.subscribe(params => {
       this.galaxy._id = params.id;
     })
 
-    
-
+    //! PLEASE PUT NOTES HERE
     if (this.title === 'Edit Galaxy') {
       this.getGalaxy(this.galaxy);
       console.log(this.galaxy);
     }
     
-    
-    
   }
 
+  //! PLEASE PUT NOTES HERE
   private getGalaxy(galaxyGet: Galaxy): void{
     this.galaxyListService.getGalaxy(galaxyGet).subscribe(data => {
       this.galaxy = data.galaxy;
@@ -52,7 +53,13 @@ export class GalaxyDetailsComponent implements OnInit {
   }
 
   public onDetailsSubmit():void{
-    
+
+    //! PLEASE PUT NOTES HERE
+    /* *
+     * An Observable instance begins publishing values only when someone 
+     * subscribes to it. You subscribe by calling the subscribe() method \
+     * of the instance, passing an observer object to receive the notifications.
+     */
     switch(this.title){
       case "Add Galaxy":
         this.galaxyListService.addGalaxy(this.galaxy).subscribe(data =>

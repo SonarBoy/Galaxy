@@ -23,6 +23,12 @@ export class CelestialObjectsComponent implements OnInit {
     this.displayObjectList();
   }
 
+  public onDeleteClick():void{
+    if(!confirm('Are you sure?')){
+      this.router.navigate(['/CelestialObjects']);
+    }
+  }
+
   displayObjectList(){
     this.celestialObjectService.getCelestialObjectsList().subscribe(data =>{
       
