@@ -158,7 +158,10 @@ app.use('/api',indexRouter);
 app.use('/api/Planets',planetRouter);
 app.use('/api/celestialObjects',celestialObjectRouter);
 app.use('/api/Galaxy',galaxyRouter);
-app.use('/api/Users',passport.authenticate('jwt',{session:false}),userRouter);
+app.use('/api/Users',userRouter);
+
+//! Put back into the user router later
+//passport.authenticate('jwt',{session:false}),
 
 
 app.use(function(request,response,next){

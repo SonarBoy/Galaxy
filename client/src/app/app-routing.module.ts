@@ -15,6 +15,10 @@ import { PlanetDetailsComponent } from './pages/planet/planet-details/planet-det
 import { CelestialObjectsDetailsComponent } from './pages/celestial-objects/celestial-objects-details/celestial-objects-details.component';
 import { CelestialObjectsDeleteComponent } from './pages/celestial-objects/celestial-objects-delete/celestial-objects-delete.component';
 import { PlanetDeleteComponent } from './pages/planet/planet-delete/planet-delete.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UsersComponent } from './pages/users/users.component';
+import { UserDetailsComponent } from './pages/users/user-details/user-details.component'
+import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 
 
 const routes: Routes = [
@@ -22,6 +26,7 @@ const routes: Routes = [
   {path:'Projects',component:ProjectsComponent,data:{title:'Projects'}},
   {path:'Functions',component:FunctionsComponent,data:{title:'Functions'}},
   {path:'Home',component:HomeComponent,data:{title:'Home'}},
+  {path:'Login',component:LoginComponent,data:{title:'Login'}},
   {path:'',component:HomeComponent,data:{title:'Home'}},
   
   //Planets
@@ -41,6 +46,12 @@ const routes: Routes = [
   {path:'CelestialObjects/add',component:CelestialObjectsDetailsComponent,data:{title:'Add Celestial Objects'}},
   {path:'CelestialObjects/edit/:id',component:CelestialObjectsDetailsComponent,data:{title:'Edit Celestial Objects'}},
   {path:'CelestialObjects/delete/:id',component:CelestialObjectsDeleteComponent,data:{title:'Delete Celestial Objects'}},
+
+
+  {path:'Users',component:UsersComponent,data:{title:'Users'}},
+  {path:'Users/add',component:UserDetailsComponent,data:{title:'Add User'}},
+  {path:'Users/delete/:id',component:UserDeleteComponent,data:{title:'Delete User'}},
+
   {path:'**',component:ErrorComponent}
 ];
 

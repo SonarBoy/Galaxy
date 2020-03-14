@@ -1,0 +1,48 @@
+<p>user-details works!</p>
+<div class="row col-md-offset-4 col-md-4">
+    <!--
+        When angular is using the (submit) functionality 
+        all font end validation is going to break.
+    -->
+    <form class="testform" #testform="ngForm" (submit)="onDetailsSubmit()" method="POST" >
+        <fieldset class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" required
+            name="username" placeholder="Enter Username" autofocus
+            id="username"
+            [(ngModel)] = "user.username"
+            value="{{user.username}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="username">Display Name:</label>
+            <input type="text" class="form-control" required
+            name="displayName" placeholder="Enter Display Name" autofocus
+            id="displayName"
+            [(ngModel)] = "user.displayName"
+            value="{{user.displayName}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" required
+            name="password" placeholder="."
+            id="password"
+            [(ngModel)] = "user.password"
+            value="{{user.password}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" required
+            name="email" placeholder="."
+            id="email"
+            [(ngModel)] = "user.email"
+            value="{{user.email}}">
+        </fieldset>
+
+        <fieldset class="form-group text-right">
+            <button type="button" (click)="onDetailsSubmit();">Preview</button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<p>users works!</p>
+
+<a class="btn btn-primary btn-sm" routerLink="/Users/add" role="button">Add to Planets</a>
+    <div *ngFor="let item of users">
+        <div class="row mb-1 p-4">
+            <div class="col-md-12">
+                <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative  ">
+                    <div class="col p-4 d-flex flex-column position-static rowItemMongo">
+                        
+                        <h3 class="mb-0">{{item.username}}</h3>
+                        <p class="card-text mb-auto">{{item.displayName}}</p>
+                        <p class="card-text mb-auto">{{item.email}}</p>
+                        <p class="card-text mb-auto">{{item._id}}</p>
+                        <span class="span2">
+                            <a routerLink="/Users/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    

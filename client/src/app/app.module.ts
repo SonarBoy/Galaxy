@@ -24,6 +24,11 @@ import { GalaxyDeleteComponent } from './pages/galaxy/galaxy-delete/galaxy-delet
 import { GalaxyDetailsComponent } from './pages/galaxy/galaxy-details/galaxy-details.component';
 import { CelestialObjectsDetailsComponent } from './pages/celestial-objects/celestial-objects-details/celestial-objects-details.component';
 import { CelestialObjectsDeleteComponent } from './pages/celestial-objects/celestial-objects-delete/celestial-objects-delete.component';
+import { UsersComponent } from './pages/users/users.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { UserDetailsComponent } from './pages/users/user-details/user-details.component';
+import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 
 //import { AuthGuard } from './guards/auth.guard';
 /* *
@@ -66,7 +71,12 @@ JwtModule.forRoot({
     GalaxyDeleteComponent,
     GalaxyDetailsComponent,
     CelestialObjectsDetailsComponent,
-    CelestialObjectsDeleteComponent
+    CelestialObjectsDeleteComponent,
+    UsersComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserDetailsComponent,
+    UserDeleteComponent
   ],
   imports: [
     BrowserModule,

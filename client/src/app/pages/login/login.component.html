@@ -1,0 +1,34 @@
+<p>login works!</p>
+<main class="container ">
+ 
+    <div class="row col-md-offset-10 col-md-3">
+        <h1>Please Login</h1>
+        <form class="loginform" #loginform="ngForm" (submit)="onLoginSubmit()">
+            <fieldset class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" required
+                name="username" placeholder="Enter Username" autofocus
+                [(ngModel)] = "user.username"
+                id="login">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" required
+                name="password" placeholder="."
+                [(ngModel)] = "user.password"
+                id="password"
+                >
+                or
+                <a routerLink="/register" class="href">Register Here</a>
+            </fieldset>
+
+            <fieldset class="form-group text-right">
+                <!--<a routerLink="Users/forgotPassword" class="href">Forgot Password</a>
+                -->
+                <input type="submit" value="login" class="btn btn-success" >
+
+            </fieldset>
+        </form>
+    </div>
+</main>
