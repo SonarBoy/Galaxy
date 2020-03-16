@@ -105,7 +105,7 @@ app.use(cors());
 
 app.use(session({
     secret:"SomeSecret",
-    saveUnitialize: true,
+    saveUninitialize: true,
     resave: true
 }));
 
@@ -134,12 +134,72 @@ app.use(passport.session());
 let userModel = require('../model/User');
 let User = userModel.User;
 
+passport.use(User.createStrategy());
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+
+
+/* *
+ * ExtractJWT INCLUDED EXTRACTIONS
+ *
+ *   fromHeader(header_name) creates a new extractor that looks for the JWT in the given http header
+ * 
+ *   fromBodyField(field_name) creates a new extractor that looks for the JWT in the given body field. 
+ *   You must have a body parser configured in order to use this method.
+ * 
+ *   fromUrlQueryParameter(param_name) creates a new extractor that looks for the JWT in the 
+ *   given URL query parameter.
+ * 
+ *   fromAuthHeaderWithScheme(auth_scheme) creates a new extractor that looks for the JWT in the 
+ *   authorization header, expecting the scheme to match auth_scheme.
+ * 
+ *   fromAuthHeaderAsBearerToken() creates a new extractor that looks for the JWT in the authorization 
+ *   header with the scheme 'bearer'
+ * 
+ *   fromExtractors([array of extractor functions]) creates a new extractor using an array of extractors 
+ *   provided. Each extractor is attempted in order until one returns a token.
+ * 
+ */
+
+
+
 
 let jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJWT.fromHeader("authorization");
 jwtOptions.secretOrKey = db.secret;
+
+/* *
+new JwtStrategy(options, verify)
+
+options is an object literal containing options to control how the token is extracted from the request or verified.
+
+    secretOrKey is a string or buffer containing the secret (symmetric) or PEM-encoded public key 
+    (asymmetric) for verifying the token's signature. REQUIRED unless secretOrKeyProvider is provided.
+
+    secretOrKeyProvider is a callback in the format function secretOrKeyProvider(request, rawJwtToken, done), 
+    which should call done with a secret or PEM-encoded public key (asymmetric) for the given key and request 
+    combination. done accepts arguments in the format function done(err, secret). Note it is up to the implementer 
+    to decode rawJwtToken. REQUIRED unless secretOrKey is provided.
+
+    jwtFromRequest (REQUIRED) Function that accepts a request as the only parameter and returns either the JWT as a 
+    string or null. See Extracting the JWT from the request for more details.
+
+    issuer: If defined the token issuer (iss) will be verified against this value.
+
+    audience: If defined, the token audience (aud) will be verified against this value.
+
+    algorithms: List of strings with the names of the allowed algorithms. For instance, ["HS256", "HS384"].
+
+    ignoreExpiration: if true do not validate the expiration of the token.
+
+    passReqToCallback: If true the request will be passed to the verify callback. i.e. verify(request, jwt_payload, done_callback).
+
+    jsonWebTokenOptions: passport-jwt is verifying the token using jsonwebtoken. Pass here an options object for any other 
+    option you can pass the jsonwebtoken verifier. (i.e maxAge) verify is a function with the parameter
+*/
+
 
 //* http://www.passportjs.org/packages/passport-jwt/
 let strategy = new JWTStrategy(jwtOptions,(jwt_payload,done) => 
@@ -160,7 +220,7 @@ app.use('/api/celestialObjects',celestialObjectRouter);
 app.use('/api/Galaxy',galaxyRouter);
 app.use('/api/Users',userRouter);
 
-//! Put back into the user router later
+
 //passport.authenticate('jwt',{session:false}),
 
 

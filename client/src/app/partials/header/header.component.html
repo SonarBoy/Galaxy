@@ -38,21 +38,19 @@
 
               -->
 
-              <!--
+              
               <li *ngIf="isLoggedIn()" class="nav-item">
                 <a class="nav-link">Welcome, {{user.username}}</a>
               </li>
-            
               
+              <li *ngIf="isLoggedIn()" class="nav-item">
+                <a routerLink="/logout" class="nav-link" (click)="onLogoutClick()">Logout</a>
+              </li>
+              
+              <li *ngIf="!isLoggedIn()" class="nav-item">
+                <a routerLink="/login" class="nav-link">Login</a>
+              </li>
                 
-                <li *ngIf="isLoggedIn()" class="nav-item">
-                  <a routerLink="/logout" class="nav-link" (click)="onLogoutClick()">Logout</a>
-                </li>
-              
-                <li *ngIf="!isLoggedIn()" class="nav-item">
-                    <a routerLink="/login" class="nav-link">Login</a>
-                  </li>
-                  -->
               
             </ul>
   

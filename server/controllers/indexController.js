@@ -14,14 +14,13 @@ module.exports.processLoginPage = (request,response,next) =>
         (error,user,info) => {
 
             if(error){
+                console.log(error);
                 return next(error);
             }
 
             if(!user){
                 return response.json({success:false,msg: "Failed to Login.",user:user});
             }
-
-
             /* 
             * passport.logIn() 
             * Used to establish a login session.
@@ -31,6 +30,7 @@ module.exports.processLoginPage = (request,response,next) =>
             request.logIn(user,(error) => {
 
                 if(error){
+                    console.log(error);
                     return next(error);
                 }
 
@@ -55,7 +55,7 @@ module.exports.processLoginPage = (request,response,next) =>
                 * https://github.com/auth0/node-jsonwebtoken
                 */
                 const authToken = jwt.sign(payload, DB.secret,{
-                    expiesIn: 604800
+                    expiresIn: 604800
                 });
 
                 return response.json({success:true, msg: 'User logged in Successfully',
@@ -70,7 +70,7 @@ module.exports.processLoginPage = (request,response,next) =>
                 })
 
             })(request,response,next);
-};
+}
 
 
 module.exports.processRegisterPage = (request,response,next) => 

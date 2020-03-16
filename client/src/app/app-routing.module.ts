@@ -19,6 +19,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserDetailsComponent } from './pages/users/user-details/user-details.component'
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -26,31 +27,31 @@ const routes: Routes = [
   {path:'Projects',component:ProjectsComponent,data:{title:'Projects'}},
   {path:'Functions',component:FunctionsComponent,data:{title:'Functions'}},
   {path:'Home',component:HomeComponent,data:{title:'Home'}},
-  {path:'Login',component:LoginComponent,data:{title:'Login'}},
+  {path:'login',component:LoginComponent,data:{title:'login'}},
   {path:'',component:HomeComponent,data:{title:'Home'}},
   
   //Planets
   {path:'Planets',component:PlanetComponent,data:{title:'Planets'}},
-  {path:'Planets/add',component:PlanetDetailsComponent,data:{title:'Add Planet'}},
-  {path:'Planets/edit/:id',component:PlanetDetailsComponent,data:{title:'Edit Planet'}},
-  {path:'Planets/delete/:id',component:PlanetDeleteComponent,data:{title:'Delete Planet'}},
+  {path:'Planets/add',component:PlanetDetailsComponent,data:{title:'Add Planet'},canActivate:[AuthGuard]},
+  {path:'Planets/edit/:id',component:PlanetDetailsComponent,data:{title:'Edit Planet'},canActivate:[AuthGuard]},
+  {path:'Planets/delete/:id',component:PlanetDeleteComponent,data:{title:'Delete Planet'},canActivate:[AuthGuard]},
 
 
   {path:'Galaxies',component:GalaxyComponent,data:{title:'Galaxies'}},
-  {path:'Galaxies/add',component:GalaxyDetailsComponent,data:{title:'Add Galaxy'}},
-  {path:'Galaxies/edit/:id',component:GalaxyDetailsComponent,data:{title:'Edit Galaxy'}},
-  {path:'Galaxies/delete/:id',component:GalaxyDeleteComponent,data:{title:'Delete Galaxy'}},
+  {path:'Galaxies/add',component:GalaxyDetailsComponent,data:{title:'Add Galaxy'},canActivate:[AuthGuard]},
+  {path:'Galaxies/edit/:id',component:GalaxyDetailsComponent,data:{title:'Edit Galaxy'},canActivate:[AuthGuard]},
+  {path:'Galaxies/delete/:id',component:GalaxyDeleteComponent,data:{title:'Delete Galaxy'},canActivate:[AuthGuard]},
 
 
   {path:'CelestialObjects',component:CelestialObjectsComponent,data:{title:'CelestialObjects'}},
-  {path:'CelestialObjects/add',component:CelestialObjectsDetailsComponent,data:{title:'Add Celestial Objects'}},
-  {path:'CelestialObjects/edit/:id',component:CelestialObjectsDetailsComponent,data:{title:'Edit Celestial Objects'}},
-  {path:'CelestialObjects/delete/:id',component:CelestialObjectsDeleteComponent,data:{title:'Delete Celestial Objects'}},
+  {path:'CelestialObjects/add',component:CelestialObjectsDetailsComponent,data:{title:'Add Celestial Objects'},canActivate:[AuthGuard]},
+  {path:'CelestialObjects/edit/:id',component:CelestialObjectsDetailsComponent,data:{title:'Edit Celestial Objects'},canActivate:[AuthGuard]},
+  {path:'CelestialObjects/delete/:id',component:CelestialObjectsDeleteComponent,data:{title:'Delete Celestial Objects'},canActivate:[AuthGuard]},
 
 
-  {path:'Users',component:UsersComponent,data:{title:'Users'}},
-  {path:'Users/add',component:UserDetailsComponent,data:{title:'Add User'}},
-  {path:'Users/delete/:id',component:UserDeleteComponent,data:{title:'Delete User'}},
+  {path:'Users',component:UsersComponent,data:{title:'Users'},canActivate:[AuthGuard]},
+  {path:'Users/add',component:UserDetailsComponent,data:{title:'Add User'},canActivate:[AuthGuard]},
+  {path:'Users/delete/:id',component:UserDeleteComponent,data:{title:'Delete User'},canActivate:[AuthGuard]},
 
   {path:'**',component:ErrorComponent}
 ];

@@ -29,6 +29,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserDetailsComponent } from './pages/users/user-details/user-details.component';
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 //import { AuthGuard } from './guards/auth.guard';
 /* *
@@ -87,9 +88,8 @@ JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
       }
-    })
-  ],
-  providers: [],
+    })],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
