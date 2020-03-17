@@ -1,6 +1,7 @@
 let passport = require('passport');
 let jwt = require('jsonwebtoken');
 let DB = require('../config/db');
+let userModel = require('../model/User');
 
 module.exports.processLoginPage = (request,response,next) => 
 {   

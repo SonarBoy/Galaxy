@@ -20,6 +20,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { UserDetailsComponent } from './pages/users/user-details/user-details.component'
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path:'Functions',component:FunctionsComponent,data:{title:'Functions'}},
   {path:'Home',component:HomeComponent,data:{title:'Home'}},
   {path:'login',component:LoginComponent,data:{title:'login'}},
+  {path:'register',component:RegisterComponent,data:{title:'register'}},
   {path:'',component:HomeComponent,data:{title:'Home'}},
   
   //Planets

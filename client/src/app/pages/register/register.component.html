@@ -1,1 +1,47 @@
-<p>register works!</p>
+
+<main class="container ">
+    <div class="row col-md-offset-4 col-md-4">
+        <h1>Registration</h1>
+        <form class="registerform" #registerform="ngForm" (submit)="onRegisterSubmit()">
+            <fieldset class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" required
+                name="username" placeholder="Enter Username" autofocus
+                [(ngModel)] = "user.username"
+                value="{{user.username}}"
+                id="username">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" required
+                name="password" placeholder="."
+                [(ngModel)] = "user.password"
+                value="{{user.password}}"
+                id="password">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" required
+                name="email" placeholder="."
+                [(ngModel)] = "user.email"
+                value="{{user.email}}"
+                id="email">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="displayName">Display Name:</label>
+                <input type="text" class="form-control" required
+                name="displayName" placeholder="."
+                [(ngModel)] = "user.displayName"
+                value="{{user.displayName}}"
+                id="displayName">
+            </fieldset>
+
+            <fieldset class="form-group text-right">
+                <button type="button" (click)="onRegisterSubmit();">Add</button>
+            </fieldset>
+        </form>
+    </div>
+</main>
