@@ -6,9 +6,16 @@
             <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative  ">
                 <div class="col p-4 d-flex flex-column position-static rowItemMongo">
                     
-                    <h3 class="mb-0">{{item.Name}}</h3>
-                    <h3 class="mb-0">{{item._id}}</h3>
-                    <p class="card-text mb-auto">{{item.Designation}}</p>
+                    <h3 class="">{{item.Name}}</h3>
+                    
+                    <p class="">{{item.Designation}}</p>
+                    <p class="">{{item.Type}}</p>
+                    <p class="">{{item.Diameter}}</p>
+                    <p class="">{{item.DistanceFromEarth}}</p>
+                    <p class="">{{item.Mass}}</p>
+                    <p class="">{{item.Constellation}}</p>
+                    <p class="">{{item.Discovered}}</p>
+                    <p class="">{{item.Stars}}</p>
                     <span class="span2">
                         <a routerLink="/Galaxies/edit/{{ item._id }}" class="btn btn-primary" >Edit</a>
                         <a routerLink="/Galaxies/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
