@@ -1,16 +1,31 @@
-<h1>celestial-objects works!</h1>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+      <h1 class="" id="title">Celestial Objects</h1>
+    </div>
+    <br>
+    
+</div>
 
-<a class="btn btn-primary btn-sm" routerLink="/CelestialObjects/add" role="button">Add to Celestial Objects</a>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+    <a class="col-6 btn btn-primary btn-sm " routerLink="/CelestialObjects/add" role="button">Add to Planets</a>
+    </div>
+    <br>
+    
+</div>
 
 <div *ngFor="let item of celestialObjects">
-    <div class="row mb-1 p-4">
-        <div class="col-md-12">
-            <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative  ">
-                <div class="col p-4 d-flex flex-column position-static rowItemMongo">
+    <div class="container">
+        <div class="row row-xs-10 row-lg-12 row-xl-12 border border-primary">
+            <div class="">
+                <div class="">
                     
-                    <h3 class="mb-0">{{item.Name}}</h3>
-                    <p class="card-text mb-auto">{{item.Description}}</p>
-                    <span class="span2">
+                    <h3 class="">{{item.Name}}</h3>
+                    <p class="">{{item.Description}}</p>
+                    <span class="">
                         <a routerLink="/CelestialObjects/edit/{{ item._id }}" class="btn btn-primary" >Edit</a>
                         <a routerLink="/CelestialObjects/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
                     </span>
@@ -18,4 +33,7 @@
             </div>
         </div>
     </div>
+    <br>
 </div>
+
+</body>

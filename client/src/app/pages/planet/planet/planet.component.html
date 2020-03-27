@@ -17,12 +17,24 @@
 
     <div *ngFor="let item of planets">
         <div class="container">
-            <div class="row row-xs-10 row-lg-12 row-xl-12 ">
+            <div class="row row-xs-10 row-lg-12 row-xl-12 border border-primary">
                 <div class="">
                     <div class="">
                         
                         <h3 class=" ">{{item.Name}}</h3>
                         <p class="">{{item.Description}}</p>
+                        <div class="row justify-content-center">
+                        <div class="flip-card">
+                          <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                              <img src="assets/Planets/{{item.Name}}.jpg" alt="Avatar" style="max-height:100%; max-width:100%; background-size: cover ;">
+                            </div>
+                            <div class="flip-card-back">
+                              <img src="assets/Planets/{{item.Name}}.jpg" alt="Avatar" style="max-height:100%; max-width:100%; background-size: cover ;">
+                            </div>
+                          </div>
+                        </div> 
+                        </div>
                         <span class="">
                             <a routerLink="/Planets/edit/{{ item._id }}" class="btn btn-primary " >Edit</a>
                             <a routerLink="/Planets/delete/{{ item._id }}" class="btn btn-danger " (click)="onDeleteClick()">Delete</a>
@@ -35,21 +47,6 @@
         <br>
         
     </div>
-
-    <div *ngFor="let item of planets">
-    <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img src="assets/Planets/{{item.Name}}.jpg" alt="Avatar" style="max-height:100%; max-width:100%; background-size: cover ;">
-          </div>
-          <div class="flip-card-back">
-            <h1>John Doe</h1>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
-          </div>
-        </div>
-      </div> 
-      </div>
 
 
     <br>
@@ -159,7 +156,7 @@
             <br>
             <br>
             <br>
-          <div class="col align-item:flex-start alert-danger">
+          <div class="col-1 align-item:flex-start alert-danger">
             One of three columns
             One of three columns
             One of three columns
@@ -243,5 +240,17 @@
           </div>
         </div>
       </div>
-      
+      <div class="container">
+        <div class="row">
+          <div class="col-1 align-self-start">
+            One of three columns
+          </div>
+          <div class="col align-self-center">
+            One of three columns
+          </div>
+          <div class="col align-self-end">
+            One of three columns
+          </div>
+        </div>
+      </div>
 </body>

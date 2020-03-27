@@ -1,10 +1,23 @@
-<h1>galaxy works!</h1>
-<a class="btn btn-primary btn-sm" routerLink="/Galaxies/add" role="button">Add to Galaxies</a>
+<div class="container">
+    <div class="row justify-content-center">
+      <h1 class="" id="title">Galaxy</h1>
+    </div>
+    <br>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+    <a class="col-6 btn btn-primary btn-sm " routerLink="/Galaxies/add" role="button">Add to Galaxies</a>
+    </div>
+    <br>    
+</div>
+
+
 <div *ngFor="let item of galaxy">
-    <div class="row mb-1 p-4">
-        <div class="col-md-12">
-            <div class="row  border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative  ">
-                <div class="col p-4 d-flex flex-column position-static rowItemMongo">
+    <div class="container">
+        <div class="">
+            <div class="border rounded overflow-hidden flex-md-row mb-3 border border-primary">
+                <div class="col border ">
                     
                     <h3 class="">{{item.Name}}</h3>
                     
