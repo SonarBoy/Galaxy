@@ -7,7 +7,9 @@ import { Planet } from '../model/planet';
   providedIn: 'root'
 })
 export class PlanetsService {
-  private endpoint = 'http://localhost:3000/api/Planets';
+  
+  private endpoint = 'mongodb+srv://Joshua:<password>@galaxy-imd4r.mongodb.net/test?retryWrites=true&w=majority';
+  //private endpoint = 'http://localhost:3000/api/Planets';
 
   private httpOptions = {
     headers: new HttpHeaders({
