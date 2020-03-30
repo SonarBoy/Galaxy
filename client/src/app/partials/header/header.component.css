@@ -1,0 +1,10 @@
+.parallax{
+    
+    width: 100vw;
+    max-height: 10%;
+    position: relative;
+    left:50%;
+    right:50%;
+    margin-left:-50vw;
+    margin-right:-50vw;
+}

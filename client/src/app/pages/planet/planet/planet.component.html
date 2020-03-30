@@ -35,9 +35,11 @@
                           </div>
                         </div> 
                         </div>
+                        
                         <span class="">
                             <a routerLink="/Planets/edit/{{ item._id }}" class="btn btn-primary " >Edit</a>
-                            <a routerLink="/Planets/delete/{{ item._id }}" class="btn btn-danger " (click)="onDeleteClick()">Delete</a>
+                            <a routerLink="/Planets/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
+                            
                         </span>
                     </div>
                 </div>
