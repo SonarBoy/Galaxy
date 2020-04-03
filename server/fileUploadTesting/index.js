@@ -59,7 +59,24 @@ var uploads = multer({
 }).single('mypic');
 
 
-var uploadsMultiple = multer({storage: storage}).array('userPhoto',2);
+var uploadsMultiple = multer({
+    storage: storage,
+    limits: {fileSize: maxSize},
+    fileFilter: function(request,file,cb){
+        
+        var filetypes = /jpeg|jpg|png/;
+        var mimetype = filetypes.test(file.mimetype);
+        var extname = filetypes.test(path.extname(
+            file.originalname).toLowerCase());
+
+
+        if(mimetype && extname){
+            return cb(null,true);
+        }
+
+        cb("Error: File upload only supports the following types " +  filetypes);
+    }
+}).array('userPhoto',2);
 
 
 
