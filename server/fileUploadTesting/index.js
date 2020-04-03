@@ -59,13 +59,17 @@ var uploads = multer({
 }).single('mypic');
 
 
+var uploadsMultiple = multer({storage: storage}).array('userPhoto',2);
+
+
+
 app.get("/",function(request,response){
     response.render("Signup");
 });
 
 app.post("/uploadProfilePicture",function(request,response,next){
 
-    uploads(request,response,function(error){
+    uploadsMultiple(request,response,function(error){
 
         if(error){
             response.send(error);
@@ -77,6 +81,20 @@ app.post("/uploadProfilePicture",function(request,response,next){
     //if(!fs.existsSync('fs')){
     //    fs.mkdirSync(dir);
     //}
+});
+
+
+app.post("/uploadMultiplePictures",function(request,response,next){
+
+    uploadsMultiple(request,response,function(error){
+
+        if(error){
+            response.send(error);
+        }else{
+            response.send("Success, Image uploads")
+        }
+    });
+    
 });
 
 app.listen(8080,function(error){
