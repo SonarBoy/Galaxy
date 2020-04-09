@@ -220,6 +220,9 @@ app.use('/api/celestialObjects',celestialObjectRouter);
 app.use('/api/Galaxy',galaxyRouter);
 app.use('/api/Users',userRouter);
 
+app.get('*', (req, res) => {
+    res.sendfile(path.join(__dirname, '../../public/index.html'));
+  });
 
 //passport.authenticate('jwt',{session:false}),
 
