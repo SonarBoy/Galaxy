@@ -22,7 +22,7 @@
     "@auth0/angular-jwt": "^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "angular-jwt": "^0.1.11",
-    "auth0": "^2.23.0",
+    "auth0": "^2.27.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "rxjs": "~6.4.0",
