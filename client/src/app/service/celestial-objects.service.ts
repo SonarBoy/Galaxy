@@ -9,7 +9,8 @@ import { CelestialObject } from '../model/celestial-object';
 })
 export class CelestialObjectsService {
 
-  private endpoint = 'http://localhost:3000/api/celestialObjects';
+  //private endpoint = 'http://localhost:3000/api/celestialObjects';
+  private endpoint = 'https://galaxy-x.herokuapp.com/api/celestialObject';
 
   private httpOptions = {
     headers: new HttpHeaders({
