@@ -12,7 +12,8 @@ export class UserService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'http://localhost:3000/api/Users';
+  //private endpoint = 'http://localhost:3000/api/Users';
+  private endpoint = 'https://galaxy-x.herokuapp.com/api/Users';
 
   private httpOptions = {
     headers: new HttpHeaders({

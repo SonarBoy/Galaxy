@@ -8,7 +8,8 @@ import { Galaxy } from '../model/galaxy';
 })
 export class GalaxyService {
 
-  private endpoint = 'http://localhost:3000/api/Galaxy';
+  //private endpoint = 'http://localhost:3000/api/Galaxy';
+  private endpoint = 'https://galaxy-x.herokuapp.com/api/Galaxy';
 
   private httpOptions = {
     headers: new HttpHeaders({

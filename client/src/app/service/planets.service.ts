@@ -8,8 +8,9 @@ import { Planet } from '../model/planet';
 })
 export class PlanetsService {
   
-  //private endpoint = 'mongodb+srv://Joshua:<password>@galaxy-imd4r.mongodb.net/test?retryWrites=true&w=majority';
-  private endpoint = 'http://localhost:3000/api/Planets';
+  
+  //private endpoint = 'http://localhost:3000/api/Planets';
+  private endpoint = 'https://galaxy-x.herokuapp.com/api/Planets';
 
   private httpOptions = {
     headers: new HttpHeaders({
