@@ -42,9 +42,13 @@ body {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
     margin-right: auto;
     margin-left: auto;
     color:  #00B7FF;
+    
     border-radius: 25px;
     background-color: rgb(0, 0, 0);
   }

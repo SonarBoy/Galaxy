@@ -112,3 +112,33 @@
     clip-path: circle(200px at 100% 0%);
   }
 
+  #planetContainer {
+    width: 85%;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    margin-right: auto;
+    margin-left: auto;
+    color:  #00B7FF;
+    
+    border-radius: 25px;
+    background-color: rgb(0, 0, 0);
+  }
+
+  #planetTitle{
+    text-align: center;
+  }
+
+  #planetActionBar{
+    text-align: center;
+  }
+
+  #planetEditButton{
+    margin-right: 10px;
+  }
+
+  #planetDeleteButton{
+    margin-left: 10px;
+  }

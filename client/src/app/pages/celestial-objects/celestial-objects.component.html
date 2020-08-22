@@ -1,39 +1,40 @@
 <body>
-<div class="container">
-    <div class="row justify-content-center">
-      <h1 class="" id="title">Celestial Objects</h1>
-    </div>
-    <br>
-    
-</div>
-
-
-
-<div class="container">
-    <div class="row justify-content-center">
-    <a class="col-6 btn btn-primary btn-sm " routerLink="/CelestialObjects/add" role="button">Add to Planets</a>
-    </div>
-    <br>
-    
-</div>
-
-<div *ngFor="let item of celestialObjects">
     <div class="container">
-        <div class="row row-xs-10 row-lg-12 row-xl-12 border border-primary">
-            <div class="">
+        <div class="row justify-content-center">
+            <h1 class="" id="title">Celestial Objects</h1>
+        </div>
+        <br>
+
+    </div>
+
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <a class="col-6 btn btn-primary btn-sm " routerLink="/CelestialObjects/add" role="button">Add to Planets</a>
+        </div>
+        <br>
+
+    </div>
+
+    <div *ngFor="let item of celestialObjects">
+        <div class="container">
+            <div class="row row-xs-10 row-lg-12 row-xl-12 border border-primary">
                 <div class="">
-                    
-                    <h3 class="">{{item.Name}}</h3>
-                    <p class="">{{item.Description}}</p>
-                    <span class="">
-                        <a routerLink="/CelestialObjects/edit/{{ item._id }}" class="btn btn-primary" >Edit</a>
-                        <a routerLink="/CelestialObjects/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
-                    </span>
+                    <div class="">
+
+                        <h3 class="">{{item.Name}}</h3>
+                        <p class="">{{item.Description}}</p>
+                        <span class="">
+                            <a routerLink="/CelestialObjects/edit/{{ item._id }}" class="btn btn-primary">Edit</a>
+                            <a routerLink="/CelestialObjects/delete/{{ item._id }}" class="btn btn-danger"
+                                (click)="onDeleteClick()">Delete</a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
+        <br>
     </div>
-    <br>
-</div>
 
 </body>
