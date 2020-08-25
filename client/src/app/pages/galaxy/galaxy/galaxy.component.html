@@ -1,41 +1,57 @@
 <div class="container">
     <div class="row justify-content-center">
-      <h1 class="" id="title">Galaxy</h1>
+        <h1 class="" id="title">Galaxy</h1>
     </div>
     <br>
 </div>
 
 <div class="container">
     <div class="row justify-content-center">
-    <a class="col-6 btn btn-primary btn-sm " routerLink="/Galaxies/add" role="button">Add to Galaxies</a>
+        <a class="col-6 btn btn-primary btn-sm " routerLink="/Galaxies/add" role="button">Add to Galaxies</a>
     </div>
-    <br>    
+    <br>
 </div>
 
 
 <div *ngFor="let item of galaxy">
-    <div class="container">
-        <div class="">
-            <div class="border rounded overflow-hidden flex-md-row mb-3 border border-primary">
-                <div class="col border ">
-                    
-                    <h3 class="">{{item.Name}}</h3>
-                    
-                    <p class="">{{item.Designation}}</p>
-                    <p class="">{{item.Type}}</p>
-                    <p class="">{{item.Diameter}}</p>
-                    <p class="">{{item.DistanceFromEarth}}</p>
-                    <p class="">{{item.Mass}}</p>
-                    <p class="">{{item.Constellation}}</p>
-                    <p class="">{{item.Discovered}}</p>
-                    <p class="">{{item.Stars}}</p>
-                    <span class="span2">
-                        <a routerLink="/Galaxies/edit/{{ item._id }}" class="btn btn-primary" >Edit</a>
-                        <a routerLink="/Galaxies/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <div id="galaxyContainer">
 
+
+        
+
+            
+            <h3 id="galaxyTitle">{{item.Name}}</h3>
+
+            <div class="row">
+
+            <img class=" col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12"  src="assets/pinwheel.jpg">
+
+            
+            <ul class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                <br>
+                <li>{{item.Designation}}</li>
+                <li><p class="">{{item.Type}}</p></li>
+                <li><p class="">{{item.Diameter}}</p></li>
+                <li><p class="">{{item.DistanceFromEarth}}</p></li>
+                <li><p class="">{{item.Mass}}</p></li>
+                <li><p class="">{{item.Constellation}}</p></li>
+                <li><p class="">{{item.Discovered}}</p></li>
+                <li><p class="">{{item.Stars}}</p></li>
+            </ul>
+            </div>
+            
+            
+            
+            
+            <span class="">
+                <a id="galaxyEditButton" routerLink="/Galaxies/edit/{{ item._id }}" class="btn btn-primary">Edit</a>
+                <a id="galaxyDeleteButton" routerLink="/Galaxies/delete/{{ item._id }}" class="btn btn-danger"
+                (click)="onDeleteClick()">Delete</a>
+            </span>
+        
+
+
+    </div>
+
+    <br>
+</div>

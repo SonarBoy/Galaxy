@@ -21,6 +21,9 @@ import { UserDetailsComponent } from './pages/users/user-details/user-details.co
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegisterComponent } from './pages/register/register.component';
+import { SelectionSortComponent } from './pages/selection-sort/selection-sort.component';
+import { InsertionSortComponent } from './pages/insertion-sort/insertion-sort.component';
+import { ShellSortComponent } from './pages/shell-sort/shell-sort.component';
 
 
 const routes: Routes = [
@@ -31,6 +34,10 @@ const routes: Routes = [
   {path:'login',component:LoginComponent,data:{title:'login'}},
   {path:'register',component:RegisterComponent,data:{title:'register'}},
   {path:'',component:HomeComponent,data:{title:'Home'}},
+
+  {path:'Selection-Sort',component:SelectionSortComponent,data:{title:'Selection Sort'}},
+  {path:'Insertion-Sort',component:InsertionSortComponent,data:{title:'Insertion Sort'}},
+  {path:'Shell-Sort',component:ShellSortComponent,data:{title:'Shell Sort'}},
   
   //Planets
   {path:'Planets',component:PlanetComponent,data:{title:'Planets'}},
@@ -49,7 +56,7 @@ const routes: Routes = [
   {path:'CelestialObjects/add',component:CelestialObjectsDetailsComponent,data:{title:'Add Celestial Objects'},canActivate:[AuthGuard]},
   {path:'CelestialObjects/edit/:id',component:CelestialObjectsDetailsComponent,data:{title:'Edit Celestial Objects'},canActivate:[AuthGuard]},
   {path:'CelestialObjects/delete/:id',component:CelestialObjectsDeleteComponent,data:{title:'Delete Celestial Objects'},canActivate:[AuthGuard]},
-
+ 
 
   {path:'Users',component:UsersComponent,data:{title:'Users'},canActivate:[AuthGuard]},
   {path:'Users/add',component:UserDetailsComponent,data:{title:'Add User'},canActivate:[AuthGuard]},

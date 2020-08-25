@@ -1,111 +1,22 @@
 <body>
   <div class="container">
-    <div class="row justify-content-center">
+    <div class=" justify-content-center">
       <h1 class="" id="title">Planets</h1>
     </div>
-    <br>
+    
 
   </div>
 
   <div class="container">
     <div class="row justify-content-center">
-      <a class="col-6 btn btn-primary btn-sm " routerLink="/Planets/add" role="button">Add to Planets</a>
+      <a class="col-10 btn btn-primary btn-sm " routerLink="/Planets/add" role="button">Add to Planets</a>
     </div>
     <br>
 
   </div>
 
 
-  <div class="container">
-    <h1>Regular Container</h1>
-    <div class="row">
-      <div class="col-sm-2 col-xs-2" style="border: 5px solid red;">
-        One of three columns
-      </div>
-      <div class="col-sm-2 col-xs-2" style="border: 5px solid blue;">
-        One of three columns
-      </div>
-      <div class="col-sm-2 col-xs-2" style="border: 5px solid green;">
-        One of three columns
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1>Regular Container XS COL</h1>
-    <div class="row">
-      <div class="col" style="border: 5px solid red;">
-        XS small value set
-      </div>
-      <div class="col" style="border: 5px solid blue;">
-        XS small value set
-      </div>
-      <div class="col" style="border: 5px solid green;">
-        XS small value set
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1>Regular Container SM COL</h1>
-    <div class="row">
-      <div class="col-sm" style="border: 5px solid red;">
-        SM small value set
-      </div>
-      <div class="col-sm" style="border: 5px solid blue;">
-        SM small value set
-      </div>
-      <div class="col-sm" style="border: 5px solid green;">
-        SM small value set
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1>Regular Container MD COL</h1>
-    <div class="row">
-      <div class="col-md" style="border: 5px solid red;">
-        MD small value set
-      </div>
-      <div class="col-md" style="border: 5px solid blue;">
-        MD small value set
-      </div>
-      <div class="col-md" style="border: 5px solid green;">
-        MD small value set
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1>Regular Container LG COL</h1>
-    <div class="row">
-      <div class="col-lg" style="border: 5px solid red;">
-        LG small value set
-      </div>
-      <div class="col-lg" style="border: 5px solid blue;">
-        LG small value set
-      </div>
-      <div class="col-lg" style="border: 5px solid green;">
-        LG small value set
-      </div>
-    </div>
-  </div>
-
-
-  <div class="container">
-    <h1>Regular Container XL COL</h1>
-    <div class="row">
-      <div class="col-xl" style="border: 5px solid red;">
-        LG small value set
-      </div>
-      <div class="col-xl" style="border: 5px solid blue;">
-        LG small value set
-      </div>
-      <div class="col-xl" style="border: 5px solid green;">
-        LG small value set
-      </div>
-    </div>
-  </div>
+ 
 
   <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-2">
@@ -123,15 +34,12 @@
           </div>
 
 
-
-
-
           <span class="">
             <a id="planetEditButton" routerLink="/Planets/edit/{{ item._id }}" class="btn btn-primary ">Edit</a>
             <a id="planetDeleteButton" routerLink="/Planets/delete/{{ item._id }}" class="btn btn-danger"
               (click)="onDeleteClick()">Delete</a>
-
           </span>
+          
         </div>
         <br>
       </div>

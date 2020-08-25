@@ -35,6 +35,7 @@ export class CelestialObjectsDeleteComponent implements OnInit {
         this.router.navigate(['/CelestialObjects']);
       }else{
         this.router.navigate(['/error']);
+        alert(data.error);
       }
     });
   }

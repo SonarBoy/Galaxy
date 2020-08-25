@@ -30,6 +30,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { UserDetailsComponent } from './pages/users/user-details/user-details.component';
 import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SelectionSortComponent } from './pages/selection-sort/selection-sort.component';
+import { InsertionSortComponent } from './pages/insertion-sort/insertion-sort.component';
+import { ShellSortComponent } from './pages/shell-sort/shell-sort.component';
 
 //import { AuthGuard } from './guards/auth.guard';
 /* *
@@ -77,7 +80,10 @@ JwtModule.forRoot({
     LoginComponent,
     RegisterComponent,
     UserDetailsComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    SelectionSortComponent,
+    InsertionSortComponent,
+    ShellSortComponent
   ],
   imports: [
     BrowserModule,
