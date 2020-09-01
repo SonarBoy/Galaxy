@@ -22,8 +22,8 @@ export class CelestialObjectsComponent implements OnInit {
 
   ngOnInit() {
     this.celestialObjects = new Array<CelestialObject>();
-    this.deletingObject = null;
     this.displayObjectList();
+    this.deletingObject = new CelestialObject();
   }
 
   public onDeleteClick():void{
@@ -34,7 +34,8 @@ export class CelestialObjectsComponent implements OnInit {
 
   public onIdClick(item:CelestialObject){
     this.deletingObject = item;
-    //alert(this.deletingObject._id);
+    console.log(this.deletingObject);
+    
   }
 
   public onConfirmClick():void{

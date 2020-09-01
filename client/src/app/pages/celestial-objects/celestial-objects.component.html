@@ -1,82 +1,84 @@
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <h1 class="" id="title">Celestial Objects</h1>
-        </div>
-        <br>
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 class="" id="title">Celestial Objects</h1>
+    </div>
+    <br>
 
+  </div>
+
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <a class="col-6 btn btn-primary  " routerLink="/CelestialObjects/add" role="button">Add to Planets</a>
+    </div>
+  </div>
+
+  <br>
+  <div *ngFor="let item of celestialObjects ">
+    <div class="container">
+      <div class="col col-xs-10 col-md-12 col-lg-12 col-xl-12 ">
+        <div class="">
+          <div class="">
+
+            <h3 id="celestialTitle" class=""> {{item.Name}}</h3>
+            <p class="">{{item.Description}}</p>
+
+            <a id="celestialObjectEditButton" routerLink="/CelestialObjects/edit/{{ item._id }}"
+              class="btn btn-primary">Edit</a>
+            <!--<a id="celestialObjectDeleteButton" routerLink="/CelestialObjects/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a> -->
+            <a id="celestialObjectEditButton" style="color: black"(click)="onIdClick(item)" class="btn btn-danger" data-toggle="modal"
+              data-target="#exampleModal">Delete!</a>
+
+            <br>
+            <br>
+            <br>
+
+            <span class="">
+
+
+
+              <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+
+                <div class="modal-dialog" role="document">
+
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+
+                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      Are you sure you want to delete {{deletingObject.Name}} ?
+                    </div>
+
+                    <div class="modal-footer">
+                      <a type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                      <a type="button" class="btn btn-primary" data-dismiss="modal"
+                        (click)="onConfirmClick()">Delete</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </span>
+
+
+          </div>
+        </div>
+      </div>
     </div>
 
 
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <a class="col-6 btn btn-primary  " routerLink="/CelestialObjects/add" role="button">Add to Planets</a>
-        </div>
-    </div>
 
     <br>
-    <div *ngFor="let item of celestialObjects ; trackBy: item?._id">
-        <div class="container">
-            <div class="col col-xs-10 col-md-12 col-lg-12 col-xl-12 ">
-                <div class="">
-                    <div class="">
-
-                        <h3 id="celestialTitle"class="">  {{item.Name}}</h3>
-                        <p>{{item._id}}</p>
-                        <p class="">{{item.Description}}</p>
-                        
-                        <br>
-                        
-                        <span class="">
-                            <a id="celestialObjectEditButton" routerLink="/CelestialObjects/edit/{{ item._id }}" class="btn btn-primary">Edit</a>
-                            <a id="celestialObjectDeleteButton" routerLink="/CelestialObjects/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a>
-                            <a id="celestialObjectEditButton" (click)="onIdClick(item)" class="btn btn-primary" data-toggle="modal" 
-                            data-target="#exampleModal">ID</a>
-
-                            <a id="celestialObjectDeleteButton"  class="btn btn-danger" data-toggle="modal" 
-                            data-target="#exampleModal" >Delete</a>
-
-                            <div class="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body">
-
-                                    Are you sure you want to delete {{item.Name}} ?
-                                    
-
-                                  </div>
-                                  <div class="modal-footer">
-                                    <a type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
-                                    <a type="button" class="btn btn-primary">Delete</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                        </span>
-
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SIMPLE CONFIRMATION DIALOG -->
-        
-
-        <br>
-    </div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
+  </div>
