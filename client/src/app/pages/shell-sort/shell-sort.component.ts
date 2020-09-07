@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShellSortComponent implements OnInit {
 
+  private number;
+
   constructor() { }
 
   ngOnInit() {
+    this.number = 0;
+  }
+
+  public increase(){
+    this.number++;
+    alert(this.number);
+  }
+
+  public decrease(){
+    this.number--;
+    alert(this.number);
   }
 
 }

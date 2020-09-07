@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import {Router} from '@angular/router';
 import { Planet } from 'src/app/model/planet';
 import {PlanetsService} from 'src/app/service/planets.service'
@@ -13,6 +13,9 @@ import {PlanetsService} from 'src/app/service/planets.service'
 export class PlanetComponent implements OnInit {
 
   planets: Planet[];
+  @Input() public deletingObject: Planet;
+  @ViewChild('modalButton',null) modalButton;
+
 
   constructor(
     private plService: PlanetsService,
@@ -21,7 +24,17 @@ export class PlanetComponent implements OnInit {
 
   ngOnInit() {
    this.planets = new Array<Planet>();
+   this.deletingObject = new Planet();
    this.displayPlanetList();
+  }
+
+  public onIdClick(item:Planet){
+    this.deletingObject = item;
+    console.log(this.deletingObject);
+  }
+
+  public onConfirmClick():void{
+    this.router.navigate(['/Planets/delete/'+this.deletingObject._id]);
   }
 
   public onDeleteClick():void{

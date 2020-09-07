@@ -40,6 +40,10 @@ export class PlanetDetailsComponent implements OnInit {
     });
   }
 
+  public onTestNavigate(){
+    this.router.navigate(['/Planets']);
+  }
+
   public onDetailsSubmit(): void{
     switch(this.title){
       case "Add Planet":

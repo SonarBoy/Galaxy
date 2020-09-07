@@ -1,0 +1,71 @@
+#display{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%
+}
+
+.thePic{
+    height: 20em;
+}
+
+.carousel{
+    height:10vh;
+}
+
+@media (max-width: 575.98px) { 
+    .thePic{
+        height: 15em;
+    }
+
+    .carousel{
+        height:50vh;
+    }
+    
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .thePic{
+        height: 20em;
+    }
+
+    .carousel{
+        height:23vh;
+    }
+    
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .thePic{
+        height: 25em;
+    }
+
+    .carousel{
+        height:29vh;
+    }
+    
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .thePic{
+        height: 30em;
+    }
+
+    .carousel{
+        height:38vh;
+    }
+}
+
+
+@media (min-width: 1200px) { 
+    .thePic{
+        height: 40em;
+    }
+
+    .carousel{
+        height:54vh;
+    }
+}

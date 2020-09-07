@@ -1,4 +1,4 @@
-<p>galaxy-details works!</p>
+<div class="container">
 <div class="row col-md-offset-4 col-md-4">
     <!--
         When angular is using the (submit) functionality 
@@ -103,11 +103,13 @@
 
         
         <fieldset class="form-group text-right">
-            <button type="button" (click)="onDetailsSubmit();">Preview</button>
+            <a id="galaxyCreateButton" class="btn btn-primary" (click)="onDetailsSubmit();">Create Galaxy!</a>
         </fieldset>
 
         <fieldset class="form-group text-right">
-            <button type="button" (click)="onTestNavigate();">Back</button>
+            
+            <a id="galaxyCreateButton" class="btn btn-secondary" (click)="onTestNavigate();">Back</a>
         </fieldset>
     </form>
+</div>
 </div>

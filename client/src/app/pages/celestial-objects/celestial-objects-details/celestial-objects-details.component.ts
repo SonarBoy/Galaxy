@@ -31,6 +31,10 @@ export class CelestialObjectsDetailsComponent implements OnInit {
 
   }
 
+  public onTestNavigate(){
+    this.router.navigate(['/CelestialObjects']);
+  }
+
   //! PLEASE PUT NOTES HERE
   public onDetailsSubmit():void{
     switch(this.title){

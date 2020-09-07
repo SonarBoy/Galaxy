@@ -16,6 +16,7 @@
   </div>
 
   <br>
+
   <div *ngFor="let item of celestialObjects ">
     <div class="container">
       <div class="col col-xs-10 col-md-12 col-lg-12 col-xl-12 ">
@@ -27,17 +28,13 @@
 
             <a id="celestialObjectEditButton" routerLink="/CelestialObjects/edit/{{ item._id }}"
               class="btn btn-primary">Edit</a>
-            <!--<a id="celestialObjectDeleteButton" routerLink="/CelestialObjects/delete/{{ item._id }}" class="btn btn-danger" (click)="onDeleteClick()">Delete</a> -->
-            <a id="celestialObjectEditButton" style="color: black"(click)="onIdClick(item)" class="btn btn-danger" data-toggle="modal"
-              data-target="#exampleModal">Delete!</a>
+            <a id="celestialObjectEditButton" style="color: black" (click)="onIdClick(item)" class="btn btn-danger"
+              data-toggle="modal" data-target="#exampleModal">Delete!</a>
 
             <br>
-            <br>
-            <br>
+            
 
             <span class="">
-
-
 
               <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -45,14 +42,13 @@
                 <div class="modal-dialog" role="document">
 
                   <div class="modal-content">
-
                     <div class="modal-header">
-
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
 
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
+
                     </div>
 
                     <div class="modal-body">
@@ -67,6 +63,7 @@
 
                   </div>
                 </div>
+
               </div>
 
             </span>
@@ -76,9 +73,6 @@
         </div>
       </div>
     </div>
-
-
-
 
     <br>
   </div>

@@ -17,16 +17,10 @@
     <div id="galaxyContainer">
 
 
-        
-
-            
             <h3 id="galaxyTitle">{{item.Name}}</h3>
-
+            <br>
             <div class="row">
-
             <img class=" col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12"  src="assets/pinwheel.jpg">
-
-            
             <ul class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
                 <br>
                 <li>{{item.Designation}}</li>
@@ -40,18 +34,51 @@
             </ul>
             </div>
             
-            
-            
-            
-            <span class="">
-                <a id="galaxyEditButton" routerLink="/Galaxies/edit/{{ item._id }}" class="btn btn-primary">Edit</a>
-                <a id="galaxyDeleteButton" routerLink="/Galaxies/delete/{{ item._id }}" class="btn btn-danger"
-                (click)="onDeleteClick()">Delete</a>
-            </span>
-        
+            <br>
+            <br>
 
+            <a id="galaxyEditButton" routerLink="/Galaxies/edit/{{ item._id }}"
+            class="btn btn-primary">Edit</a>
+            <a id="galaxyDeleteButton" style="" (click)="onIdClick(item)" class="btn btn-danger"
+            data-toggle="modal" data-target="#exampleModal">Delete!</a>
+
+            <br>
+          
+
+          <span class="">
+
+            <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+
+              <div class="modal-dialog" role="document">
+
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+
+                  </div>
+
+                  <div class="modal-body">
+                    Are you sure you want to delete {{deletingObject.Name}} ?
+                  </div>
+
+                  <div class="modal-footer">
+                    <a type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
+                    <a type="button" class="btn btn-primary" data-dismiss="modal"
+                      (click)="onConfirmClick()">Delete</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </span>
+            
 
     </div>
-
     <br>
 </div>

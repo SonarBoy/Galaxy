@@ -1,35 +1,32 @@
-<p>planet-details works!</p>
+<body>
+<div class="container">
+    <form class="testform" #testform="ngForm" (submit)="onDetailsSubmit()" method="POST">
+        <fieldset class="form-group">
+            <label for="Name">Name:</label>
+            <input type="text" class="form-control" required name="Name" placeholder="Enter Name" autofocus id="Name"
+                [(ngModel)]="planets.Name" value="{{planets.Name}}">
+        </fieldset>
+
+        <fieldset class="form-group">
+
+            <label for="Description">Description:</label>
+            <input type="text" class="form-control" required name="Description" placeholder="Enter Description"
+                autofocus id="Description" [(ngModel)]="planets.Description" value="{{planets.Description}}">
+        </fieldset>
 
 
 
-<form class="testform" #testform="ngForm" (submit)="onDetailsSubmit()" method="POST">
-    <fieldset class="form-group">
-        <label for="Name">Name:</label>
-        <input type="text" class="form-control" required
-        name="Name" placeholder="Enter Name" autofocus
-        id="Name"
-        [(ngModel)] = "planets.Name"
-        value="{{planets.Name}}">
-    </fieldset>
-
-    <fieldset class="form-group">
-    
-        <label for="Description">Description:</label>
-        <input type="text" class="form-control" required
-        name="Description" placeholder="Enter Description" autofocus
-        id="Description"
-        [(ngModel)] = "planets.Description"
-        value="{{planets.Description}}">
-    </fieldset>
+        <fieldset class="form-group text-right">
 
 
-    
-    <fieldset class="form-group text-right">
-        <button type="button" (click)="onDetailsSubmit();">Preview</button>
-    </fieldset>
+            <a id="planetCreateButton" class="btn btn-primary" (click)="onDetailsSubmit();">Create Planet!</a>
+        </fieldset>
 
-    <fieldset class="form-group text-right">
-        <!--<button type="button" (click)="onTestNavigate();">Back</button>-->
-        
-    </fieldset>
-</form>
+        <fieldset class="form-group text-right">
+            
+            <a id="planetCreateButton" class="btn btn-secondary" (click)="onTestNavigate();">Back</a>
+
+        </fieldset>
+    </form>
+</div>
+</body>

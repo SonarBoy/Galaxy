@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class GalaxyComponent implements OnInit {
 
   galaxy: Galaxy[];
+  deletingObject : Galaxy;
 
   constructor(
     private galaxyService: GalaxyService,
@@ -20,9 +21,8 @@ export class GalaxyComponent implements OnInit {
 
   ngOnInit() {
     this.galaxy = new Array<Galaxy>();
+    this.deletingObject = new Galaxy();
     this.displayGalaxyList();
-
-    
   }
 
   public onTestNavigate():void{
@@ -33,6 +33,16 @@ export class GalaxyComponent implements OnInit {
     if(!confirm('Are you sure?')){
       this.router.navigate(['/Galaxies']);
     }
+  }
+
+  public onIdClick(item:Galaxy){
+    this.deletingObject = item;
+    console.log(this.deletingObject);
+    
+  }
+
+  public onConfirmClick():void{
+    this.router.navigate(['/Galaxies/delete/'+this.deletingObject._id]);
   }
 
   displayGalaxyList(){
